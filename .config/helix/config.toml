@@ -1,0 +1,16 @@
+theme = "rose_pine"
+
+[editor]
+line-number = "relative"
+mouse = false
+true-color = true
+color-modes = true
+gutters = ["diagnostics", "diff", "line-numbers", "spacer"]
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+character = "┆"
+skip-levels = 1   
