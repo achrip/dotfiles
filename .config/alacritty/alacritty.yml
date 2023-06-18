@@ -16,11 +16,11 @@ scrolling:
 
 font: 
   normal: 
-    family: JetBrainsMono Nerd Font
+    family: Hasklug Nerd Font
     style: Regular
   italic:
-    family: JetBrainsMono Nerd Font
+    family: Hasklug Nerd Font
     style: RegularItalic
   bold_italic: 
-    family: JetBrainsMono Nerd Font
+    family: Hasklug Nerd Font
     style: BoldItalic
