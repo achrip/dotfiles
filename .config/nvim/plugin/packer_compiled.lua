@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/achrip/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["jupyter_ascending.vim"] = {
+    loaded = true,
+    path = "/home/achrip/.local/share/nvim/site/pack/packer/start/jupyter_ascending.vim",
+    url = "https://github.com/untitled-ai/jupyter_ascending.vim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/achrip/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
