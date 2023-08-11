@@ -41,4 +41,11 @@ return require('packer').startup(function(use)
 
   use('mattn/emmet-vim')
   use('untitled-ai/jupyter_ascending.vim')
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+}
 end)
