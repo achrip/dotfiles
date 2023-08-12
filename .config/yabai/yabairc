@@ -1,3 +1,6 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
 # bsp, stack, or float
 yabai -m config layout bsp
 
@@ -12,7 +15,7 @@ yabai -m config window_gap 12
 
 # mouse settings
 yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse autoraise
+# yabai -m config focus_follows_mouse autoraise
 yabai -m config mouse_modifier alt
 
 # left click + drag
@@ -29,4 +32,4 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^checkra1n$" manage=off
 
 # other stuff
-yabai -m config focus_follows_mouse on
+# yabai -m config focus_follows_mouse on
