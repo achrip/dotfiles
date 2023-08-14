@@ -66,4 +66,4 @@ shift + alt - 7 : yabai -m window --space 7;
 shift + alt - 8 : yabai -m window --space 8; 
 
 # launch new default terminal instance
-cmd - return : open -na /Applications/Alacritty.app
+cmd - return : open -na /Applications/Kitty.app

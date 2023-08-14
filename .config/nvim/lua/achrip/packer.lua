@@ -14,6 +14,13 @@ return require('packer').startup(function(use)
   }
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use({ 'CodeGradox/onehalf-lush'})
+  use ({
+    'uloco/bluloco.nvim',
+    requires = { 'rktjmp/lush.nvim' }
+  })
+
 
   use ('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
   use ('nvim-treesitter/playground')
