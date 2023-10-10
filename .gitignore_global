@@ -1,6 +1,7 @@
 .DS_Store
+.dotfiles
 .cfg
 
+.gitconfig
 # ignore packer_compiled
-/home/achrip/.config/nvim/plugin/packer_compiled.lua
-/Users/achrip/.config/nvim/plugin/packer_compiled.lua
+!/.config/nvim/plugin/*
