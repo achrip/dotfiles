@@ -1,7 +1,2 @@
 .DS_Store
-.dotfiles
 .cfg
-
-.gitconfig
-# ignore packer_compiled
-!/.config/nvim/plugin/*
