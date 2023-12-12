@@ -37,6 +37,9 @@ symbol = " "
 [guix_shell]
 symbol = " "
 
+[gradle]
+symbol = " "
+
 [haskell]
 symbol = " "
 
@@ -54,6 +57,9 @@ symbol = " "
 
 [julia]
 symbol = " "
+
+[kotlin]
+symbol = "󱈙 "
 
 [lua]
 symbol = " "
