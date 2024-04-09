@@ -2,7 +2,7 @@ return {
   'wbthomason/packer.nvim',
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim'}
   },
 
@@ -32,7 +32,9 @@ return {
   },
 
     'rebelot/kanagawa.nvim',
-    'snelling-a/base16.nvim',
+    'rithikasilva/sequoia-monochrome.nvim',
+    'kdheepak/monochrome.nvim',
+    'cranberry-clockworks/coal.nvim',
   {
     'folke/tokyonight.nvim',
     lazy = true,
@@ -44,25 +46,4 @@ return {
     priority = 1000
   },
   { 'folke/zen-mode.nvim' },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.export"] = {},
-          ["core.dirman"] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              notes = "~/notes",
-            },
-          },
-        },
-      },
-    }
-  end,
-},
 }
