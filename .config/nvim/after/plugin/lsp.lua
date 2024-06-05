@@ -35,6 +35,7 @@ cmp.setup({
     {name = 'path'},
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
+    {name = 'otter'},
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({

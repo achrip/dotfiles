@@ -24,11 +24,24 @@ return {
       'L3MON4D3/Luasnip'
       }
   },
-    'rithikasilva/sequoia-monochrome.nvim',
+--  {
+--    'rithikasilva/sequoia-monochrome.nvim',
+--    name = "sequoia monochrome"
+--  }, 
+  {
+    'Hiroya-W/sequoia-moonlight.nvim', 
+    name = 'sequoia moonlight'
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000
   },
   { 'folke/zen-mode.nvim' },
+  {
+    'quarto-dev/quarto-nvim', 
+    dependencies = { 
+      'jmbuhr/otter.nvim', 
+    }
+  }
 }
