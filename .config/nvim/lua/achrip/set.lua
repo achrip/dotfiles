@@ -30,3 +30,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
 
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  }
+})
