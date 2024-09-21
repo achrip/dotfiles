@@ -27,6 +27,9 @@ return {
   { 'mbbill/undotree' },
   { 'tpope/vim-fugitive' } ,
   { 'folke/zen-mode.nvim' },
+  { 'stevearc/dressing.nvim', 
+    opts = {},
+  },
 
   -- LSP and highlighting 
   {
