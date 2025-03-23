@@ -1,10 +1,10 @@
 # Changing Window Focus 
 
 # change window focus within space 
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-cmd - h : yabai -m window --focus west
-cmd - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
 
 # change focus between external displays (left and right)
 alt - s : yabai -m display --focus west 
@@ -31,8 +31,8 @@ cmd + shift - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - e : yabai -m space --balance
 
 # Focus windows 
-cmd - 0x21 : yabai -m space --focus prev
-cmd - 0x1E : yabai -m space --focus next
+# cmd - 0x21 : yabai -m space --focus prev
+# cmd - 0x1E : yabai -m space --focus next
 
 # Moving Windows Around 
 # swap windows 
@@ -66,4 +66,4 @@ shift + alt - 7 : yabai -m window --space 7;
 shift + alt - 8 : yabai -m window --space 8; 
 
 # launch new default terminal instance
-cmd - return : open -na /Applications/Kitty.app
+cmd - return : open -na /Applications/Ghostty.app

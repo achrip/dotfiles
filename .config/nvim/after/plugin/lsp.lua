@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'rust_analyzer'},
+  ensure_installed = {},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -35,7 +35,6 @@ cmp.setup({
     {name = 'path'},
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
-    {name = 'otter'},
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
@@ -45,6 +44,21 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
+
+local lspconfig = require('lspconfig')
+lspconfig.sourcekit.setup {
+  cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
+  root_dir = function(fname)
+    return require('lspconfig.util').root_pattern("Package.swift", ".git")(fname) or vim.loop.cwd()
+  end,
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true, 
+      }, 
+    }, 
+  },
+}
 
 -- for phpactor since it gives wrong diagnostics
 require("lspconfig").phpactor.setup {
