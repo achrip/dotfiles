@@ -4,6 +4,12 @@ return {
 --    'rithikasilva/sequoia-monochrome.nvim',
 --    name = 'sequoia monochrome'
 --  }, 
+  { 
+    'zenbones-theme/zenbones.nvim',
+    dependencies = 'rktjmp/lush.nvim',
+    lazy = false, 
+    priority = 1000,
+  },
   {
     'Hiroya-W/sequoia-moonlight.nvim', 
     name = 'sequoia moonlight'

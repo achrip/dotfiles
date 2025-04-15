@@ -45,19 +45,19 @@ cmp.setup({
   }),
 })
 
+-- sourcekit-lsp stuff
 local lspconfig = require('lspconfig')
 lspconfig.sourcekit.setup {
-  cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
-  root_dir = function(fname)
-    return require('lspconfig.util').root_pattern("Package.swift", ".git")(fname) or vim.loop.cwd()
-  end,
-  capabilities = {
-    workspace = {
-      didChangeWatchedFiles = {
-        dynamicRegistration = true, 
-      }, 
-    }, 
-  },
+  cmd = {'sourcekit-lsp'}, 
+  filetypes = {'swift'}, 
+  root_dir = lspconfig.util.root_pattern('Package.swift', '.git'), 
+  capabilities = vim.lsp.protocol.make_client_capabilities(), 
+
+  settings = {
+    sourcekit = {
+      didChangeWatchedFiles = true, 
+    } 
+  }
 }
 
 -- for phpactor since it gives wrong diagnostics
