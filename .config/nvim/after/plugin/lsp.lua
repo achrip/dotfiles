@@ -48,7 +48,7 @@ cmp.setup({
 -- sourcekit-lsp stuff
 local lspconfig = require('lspconfig')
 lspconfig.sourcekit.setup {
-  cmd = {'sourcekit-lsp'}, 
+  cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) }, 
   filetypes = {'swift'}, 
   root_dir = lspconfig.util.root_pattern('Package.swift', '.git'), 
   capabilities = vim.lsp.protocol.make_client_capabilities(), 
