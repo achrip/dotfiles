@@ -4,14 +4,14 @@ return {
 --    'rithikasilva/sequoia-monochrome.nvim',
 --    name = 'sequoia monochrome'
 --  }, 
-  { 
+  {
     'zenbones-theme/zenbones.nvim',
     dependencies = 'rktjmp/lush.nvim',
-    lazy = false, 
+    lazy = false,
     priority = 1000,
   },
   {
-    'Hiroya-W/sequoia-moonlight.nvim', 
+    'Hiroya-W/sequoia-moonlight.nvim',
     name = 'sequoia moonlight'
   },
   {
@@ -20,7 +20,7 @@ return {
     priority = 1000
   },
   {
-    'rose-pine/neovim', 
+    'rose-pine/neovim',
     name = 'rose-pine'
   },
 
@@ -33,20 +33,25 @@ return {
   { 'mbbill/undotree' },
   { 'tpope/vim-fugitive' } ,
   { 'folke/zen-mode.nvim' },
-  { 'stevearc/dressing.nvim', 
+  { 'stevearc/dressing.nvim',
     opts = {},
   },
-  { 
-    'stevearc/oil.nvim', 
+  {
+    'stevearc/oil.nvim',
     ---@module 'oil', 
     ---@type oil.SetupOpts, 
-    opts = { }, 
-    dependencies = { 
+    opts = { },
+    dependencies = {
       { 'echasnovski/mini.icons', opts = { } }
-    }, 
+    },
     lazy = false,
   },
-  { 
+  {
+    'stevearc/conform.nvim',
+    event = {'BufReadPre', 'BufNewFile'},
+    opts = {}
+  },
+  {
     "wojciech-kulik/xcodebuild.nvim",
     dependencies = {
       "nvim-telescope/telescope.nvim",
@@ -59,7 +64,7 @@ return {
   -- LSP and highlighting 
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate', 
+    build = ':TSUpdate',
   },
   {
     'VonHeikemen/lsp-zero.nvim',

@@ -7,11 +7,11 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # padding 
-yabai -m config top_padding 12
-yabai -m config bottom_padding 12
-yabai -m config left_padding 12
-yabai -m config right_padding 12
-yabai -m config window_gap 12
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
 
 # mouse settings
 yabai -m config mouse_follows_focus on
@@ -33,3 +33,10 @@ yabai -m rule --add app="^checkra1n$" manage=off
 
 # other stuff
 # yabai -m config focus_follows_mouse on
+
+# Always move/spawn new windows on currently active space
+# yabai -m signal --add event=window_created action="yabai -m window --space $(yabai -m query --spaces --space | jq '.index')"
+# yabai -m rule --add app="*." space=mouse
+yabai -m signal --add event=window_created action='yabai -m window $YABAI_WINDOW_ID --space $(yabai -m query --spaces --space | jq .index) && yabai -m window --focus $YABAI_WINDOW_ID'
+
+

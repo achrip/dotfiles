@@ -48,15 +48,18 @@ cmp.setup({
 -- sourcekit-lsp stuff
 local lspconfig = require('lspconfig')
 lspconfig.sourcekit.setup {
-  cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) }, 
-  filetypes = {'swift'}, 
-  root_dir = lspconfig.util.root_pattern('Package.swift', '.git'), 
-  capabilities = vim.lsp.protocol.make_client_capabilities(), 
+  cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) },
+  filetypes = {'swift'},
+  root_dir = function(fname)
+      return lspconfig.util.root_pattern('Package.swift', '.git')(fname) or
+      vim.fn.expand('%:p:h')
+    end,
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
 
   settings = {
     sourcekit = {
-      didChangeWatchedFiles = true, 
-    } 
+      didChangeWatchedFiles = true,
+    }
   }
 }
 
@@ -65,7 +68,7 @@ require("lspconfig").phpactor.setup {
   root_dir = function(_)
     return vim.loop.cwd()
   end,
-  init_options = { 
+  init_options = {
     ["language_server.diagnostics_on_update"] = false,
     ["language_server.diagnostics_on_open"] = false,
     ["language_server.diagnostics_on_save"] = false,
