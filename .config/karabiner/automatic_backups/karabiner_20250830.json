@@ -1022,7 +1022,6 @@
                 ]
             },
             "name": "achrip",
-            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         },
         {
@@ -1045,6 +1044,7 @@
                 ]
             },
             "name": "just caps",
+            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]

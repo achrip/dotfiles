@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# --- Configuration ---
+MODEL_NAME="deepseek-ai/deepseek-coder-6.7B-instruct"
+PROXY_PORT="8090"
+AIDER_MODEL_NAME="openai/$MODEL_NAME"
+
+# Find the directory where this script is located
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# --- Functions ---
+
+# Function to clean up background processes on exit
+cleanup() {
+    echo "Shutting down background servers..."
+    # Kill processes by the job ID
+    kill %1 %2
+    echo "Cleanup complete."
+}
+
+# --- Main Script ---
+
+# Set up a trap to call the cleanup function on script exit
+trap cleanup EXIT
+
+echo "Starting MLX server in the background..."
+# Start the MLX server and send it to the background
+mlx_lm.server --model "$MODEL_NAME" &
+
+# Give the server a moment to initialize
+sleep 5 
+
+echo "Starting proxy server in the background..."
+# Start the proxy using its full path, found via SCRIPT_DIR
+python3 "$SCRIPT_DIR/proxy.py" &
+
+# Give the proxy a moment to start
+sleep 2
+
+echo "Starting Aider session in the current directory..."
+# Start Aider in the foreground. It will operate on the files
+# in the directory where you ran the command.
+aider --openai-api-base "http://127.0.0.1:$PROXY_PORT/v1" \
+      --openai-api-key "secret" \
+      --model "$AIDER_MODEL_NAME"

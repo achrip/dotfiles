@@ -1,0 +1,62 @@
+;; Home row mods QWERTY example with more complexity.
+;; Some of the changes from the basic example:
+;; - when a home row mod activates tap, the home row mods are disabled
+;;   while continuing to type rapidly
+;; - tap-hold-release helps make the hold action more responsive
+;; - pressing another key on the same half of the keyboard
+;;   as the home row mod will activate an early tap action
+
+(defcfg
+  process-unmapped-keys yes 
+) 
+
+(defsrc
+  esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12
+  grv caps
+  a   s   d   f   j   k   l   ;
+)
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index
+  ;; fingers faster.
+  tap-time 200
+  hold-time 200
+)
+
+(deflayer base
+  esc     🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
+  @rld @meh
+  @a  @s  @d  @f  @j  @k  @l  @;
+)
+
+(deflayer nomods
+  esc     🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
+  grv esc
+  a   s   d   f   j   k   l   ;
+)
+
+(deffakekeys
+  to-base (layer-switch base)
+)
+
+(defalias
+  a (tap-hold $tap-time $hold-time a lctl )
+  s (tap-hold $tap-time $hold-time s lalt )
+  d (tap-hold $tap-time $hold-time d lmet )
+  f (tap-hold $tap-time $hold-time f lsft )
+  j (tap-hold $tap-time $hold-time j rsft )
+  k (tap-hold $tap-time $hold-time k rmet )
+  l (tap-hold $tap-time $hold-time l ralt )
+  ; (tap-hold $tap-time $hold-time ; rctl )
+
+  meh (tap-hold $tap-time $hold-time esc (multi ctl alt sft)) 
+  hyp (tap-hold $tap-time $hold-time _ (multi ctl alt sft met))
+
+  rld (tap-hold $tap-time 3000 grv lrld)
+
+  mc C-up ;; Mission Control
+  sls M-spc ;; Spotlight Search
+  dtn S-C-A-M-f5 ;; Dictation
+  dnd S-C-A-M-f6 ;; Do Not Disturb
+  lp S-C-A-M-l ;; Launchpad
+)

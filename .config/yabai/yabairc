@@ -37,6 +37,6 @@ yabai -m rule --add app="^checkra1n$" manage=off
 # Always move/spawn new windows on currently active space
 # yabai -m signal --add event=window_created action="yabai -m window --space $(yabai -m query --spaces --space | jq '.index')"
 # yabai -m rule --add app="*." space=mouse
-yabai -m signal --add event=window_created action='yabai -m window $YABAI_WINDOW_ID --space $(yabai -m query --spaces --space | jq .index) && yabai -m window --focus $YABAI_WINDOW_ID'
+# yabai -m signal --add event=window_created action='yabai -m window $YABAI_WINDOW_ID --space $(yabai -m query --spaces --space | jq .index) && yabai -m window --focus $YABAI_WINDOW_ID'
 
 

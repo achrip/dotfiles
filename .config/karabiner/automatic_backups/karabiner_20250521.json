@@ -4,23 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "shift+caps_lock->caps_lock; caps_lock+[...keys] -> control+[..keys]; caps_lock -> escape",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -46,7 +30,6 @@
                     },
                     {
                         "description": "Change Fn + h/j/k/l to Arrows",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -1023,28 +1006,6 @@
             },
             "name": "achrip",
             "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-        },
-        {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "name": "just caps",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]

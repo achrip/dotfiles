@@ -1,0 +1,145 @@
+{
+  "profiles" : [
+    {
+      "id" : "05411D3D-AC6E-4062-BD1B-D057E0415CAC",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "com.apple.Terminal",
+              "iconPath" : "/System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns",
+              "name" : "Terminal"
+            },
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "AE0AC114-19A4-4D7A-9A47-6B1602C6D9DA",
+          "name" : "Terminal ",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+3",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "B2443D9B-24F8-45D0-A6B5-4C55AC574E1B",
+          "name" : "Browser",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+1",
+          "symbolIconName" : "safari"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Music",
+              "iconPath" : "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
+              "name" : "Music"
+            },
+            {
+              "bundleIdentifier" : "com.github.th-ch.youtube-music",
+              "iconPath" : "/Applications/YouTube Music.app/Contents/Resources/icon.icns",
+              "name" : "YouTube Music"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "6E5884A8-B36A-4977-83EE-51BB40A2CA63",
+          "name" : "Media",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+8",
+          "symbolIconName" : "music.note"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Notes",
+              "iconPath" : "/System/Applications/Notes.app/Contents/Resources/AppIcon.icns",
+              "name" : "Notes"
+            },
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "87C9DB4D-4428-4C0E-A16D-15C863DBE8D1",
+          "name" : "Notes",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+9",
+          "symbolIconName" : "note.text"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "net.whatsapp.WhatsApp",
+              "iconPath" : "/Applications/WhatsApp.app/Contents/Resources/AppIconCatalystRelease.icns",
+              "name" : "‎WhatsApp"
+            },
+            {
+              "bundleIdentifier" : "com.automattic.beeper.desktop",
+              "iconPath" : "/Applications/Beeper Desktop.app/Contents/Resources/icon.icns",
+              "name" : "Beeper"
+            },
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "42548D0B-91EB-482F-BCAA-AC60EA1BE4AE",
+          "name" : "Socials",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+2",
+          "symbolIconName" : "message"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.blackmagic-design.DaVinciResolve",
+              "iconPath" : "/Applications/DaVinci Resolve/DaVinci Resolve.app/Contents/Resources/Resolve.icns",
+              "name" : "DaVinci Resolve"
+            },
+            {
+              "bundleIdentifier" : "com.blackmagic-design.DaVinciRemoteMonitor",
+              "iconPath" : "/Applications/DaVinci Resolve/DaVinci Remote Monitor.app/Contents/Resources/Remote_Monitoring.icns",
+              "name" : "DaVinci Remote Monitor"
+            },
+            {
+              "bundleIdentifier" : "com.blackmagic-design.davincicontrolpanels.utility",
+              "iconPath" : "/Applications/DaVinci Resolve/DaVinci Control Panels Setup.app/Contents/Resources/Icon.icns",
+              "name" : "DaVinci Control Panels Setup"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "A1E3D238-4014-4778-9E3F-9DBE3E36C05D",
+          "name" : "Others",
+          "openAppsOnActivation" : false,
+          "shortcut" : "ctrl+opt+shift+4",
+          "symbolIconName" : "baseball.diamond.bases"
+        }
+      ]
+    }
+  ]
+}
