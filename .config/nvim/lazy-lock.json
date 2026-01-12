@@ -23,6 +23,7 @@
   "sequoia moonlight": { "branch": "main", "commit": "189ed14c7a5e3fbc8c6ba4a8b374f092de5181e4" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
+  "typst-preview.nvim": { "branch": "master", "commit": "87d0f3a1beedefe6fdd96422c04c3dceb69d1063" },
   "undotree": { "branch": "master", "commit": "28f2f54a34baff90ea6f4a735ef1813ad875c743" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "vimtex": { "branch": "master", "commit": "dc90feacb86f7b85b0b791d8073eefc769a23725" },

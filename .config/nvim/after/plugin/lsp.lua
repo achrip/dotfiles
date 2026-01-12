@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -28,13 +28,13 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
   sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
@@ -49,11 +49,11 @@ cmp.setup({
 local lspconfig = require('lspconfig')
 lspconfig.sourcekit.setup {
   cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) },
-  filetypes = {'swift'},
+  filetypes = { 'swift' },
   root_dir = function(fname)
-      return lspconfig.util.root_pattern('Package.swift', '.git')(fname) or
-      vim.fn.expand('%:p:h')
-    end,
+    return lspconfig.util.root_pattern('Package.swift', '.git')(fname) or
+        vim.fn.expand('%:p:h')
+  end,
   capabilities = vim.lsp.protocol.make_client_capabilities(),
 
   settings = {
@@ -63,8 +63,16 @@ lspconfig.sourcekit.setup {
   }
 }
 
+-- tinymist
+lspconfig["tinymist"].setup {
+  settings = {
+    formatterMode = "typstyle",
+    exportPdf = "onType",
+  }
+}
+
 -- for phpactor since it gives wrong diagnostics
-require("lspconfig").phpactor.setup {
+lspconfig.phpactor.setup {
   root_dir = function(_)
     return vim.loop.cwd()
   end,

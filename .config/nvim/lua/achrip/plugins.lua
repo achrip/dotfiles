@@ -84,6 +84,12 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
   },
+  {
+    'chomosuke/typst-preview.nvim',
+    lazy = false, -- or ft = 'typst'
+    version = '1.*',
+    opts = {},    -- lazy.nvim will implicitly calls `setup {}`
+  },
 
   -- LSP and highlighting
   {
