@@ -32,7 +32,13 @@ symbol = " "
 symbol = " "
 
 [fossil_branch]
+disabled = false
 symbol = " "
+
+[fossil_metrics]
+disabled = false
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_branch]
 symbol = " "
