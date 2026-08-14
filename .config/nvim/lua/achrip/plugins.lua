@@ -118,4 +118,11 @@ return {
     end
   },
   { 'nvim-treesitter/playground' },
+  {
+    'adibhanna/laravel.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+  },
 }

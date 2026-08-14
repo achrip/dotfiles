@@ -18,6 +18,9 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
+  automatic_enable = {
+    exclude = { "phpactor" }
+  },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
