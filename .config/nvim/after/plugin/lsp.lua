@@ -49,41 +49,42 @@ cmp.setup({
 })
 
 -- sourcekit-lsp stuff
-local lspconfig = require('lspconfig')
-lspconfig.sourcekit.setup {
-  cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) },
-  filetypes = { 'swift' },
-  root_dir = function(fname)
-    return lspconfig.util.root_pattern('Package.swift', '.git')(fname) or
-        vim.fn.expand('%:p:h')
-  end,
-  capabilities = vim.lsp.protocol.make_client_capabilities(),
+vim.lsp.config("sourcekit", {
+	cmd = { vim.trim(vim.fn.system("xcrun -f sourcekit-lsp")) },
+	filetypes = { "swift" },
+	root_dir = function(fname)
+		return lspconfig.util.root_pattern("Package.swift", ".git")(fname) or vim.fn.expand("%:p:h")
+	end,
+	capabilities = vim.lsp.protocol.make_client_capabilities(),
 
-  settings = {
-    sourcekit = {
-      didChangeWatchedFiles = true,
-    }
-  }
-}
+	settings = {
+		sourcekit = {
+			didChangeWatchedFiles = true,
+		},
+	},
+})
+vim.lsp.enable("sourcekit")
 
 -- tinymist
-lspconfig["tinymist"].setup {
-  settings = {
-    formatterMode = "typstyle",
-    exportPdf = "onType",
-  }
-}
+vim.lsp.config("tinymist", {
+	settings = {
+		formatterMode = "typstyle",
+		exportPdf = "onType",
+	},
+})
+vim.lsp.enable("tinymist")
 
 -- for phpactor since it gives wrong diagnostics
-lspconfig.phpactor.setup {
-  root_dir = function(_)
-    return vim.loop.cwd()
-  end,
-  init_options = {
-    ["language_server.diagnostics_on_update"] = false,
-    ["language_server.diagnostics_on_open"] = false,
-    ["language_server.diagnostics_on_save"] = false,
-    ["language_server_phpstan.enabled"] = false,
-    ["language_server_psalm.enabled"] = false,
-  }
-}
+vim.lsp.enable("phpactor", {
+	root_dir = function(_)
+		return vim.loop.cwd()
+	end,
+	init_options = {
+		["language_server.diagnostics_on_update"] = false,
+		["language_server.diagnostics_on_open"] = false,
+		["language_server.diagnostics_on_save"] = false,
+		["language_server_phpstan.enabled"] = false,
+		["language_server_psalm.enabled"] = false,
+	},
+})
+vim.lsp.enable("phpactor")
