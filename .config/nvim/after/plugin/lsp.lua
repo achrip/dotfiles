@@ -25,7 +25,7 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+      vim.lsp.config("lua_ls", { lua_opts })
     end,
   }
 })
@@ -50,41 +50,44 @@ cmp.setup({
 
 -- sourcekit-lsp stuff
 vim.lsp.config("sourcekit", {
-	cmd = { vim.trim(vim.fn.system("xcrun -f sourcekit-lsp")) },
-	filetypes = { "swift" },
-	root_dir = function(fname)
-		return lspconfig.util.root_pattern("Package.swift", ".git")(fname) or vim.fn.expand("%:p:h")
-	end,
-	capabilities = vim.lsp.protocol.make_client_capabilities(),
+  cmd = { vim.trim(vim.fn.system("xcrun -f sourcekit-lsp")) },
+  filetypes = { "swift" },
+  root_dir = function(_, callback)
+    callback(
+      require("lspconfig.util").root_pattern("Package.swift")(vim.fn.getcwd())
+      or require("lspconfig.util").find_git_ancestor(vim.fn.getcwd())
+    )
+  end,
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
 
-	settings = {
-		sourcekit = {
-			didChangeWatchedFiles = true,
-		},
-	},
+  settings = {
+    sourcekit = {
+      didChangeWatchedFiles = true,
+    },
+  },
 })
 vim.lsp.enable("sourcekit")
 
 -- tinymist
 vim.lsp.config("tinymist", {
-	settings = {
-		formatterMode = "typstyle",
-		exportPdf = "onType",
-	},
+  settings = {
+    formatterMode = "typstyle",
+    exportPdf = "onType",
+  },
 })
 vim.lsp.enable("tinymist")
 
 -- for phpactor since it gives wrong diagnostics
 vim.lsp.enable("phpactor", {
-	root_dir = function(_)
-		return vim.loop.cwd()
-	end,
-	init_options = {
-		["language_server.diagnostics_on_update"] = false,
-		["language_server.diagnostics_on_open"] = false,
-		["language_server.diagnostics_on_save"] = false,
-		["language_server_phpstan.enabled"] = false,
-		["language_server_psalm.enabled"] = false,
-	},
+  root_dir = function(_)
+    return vim.loop.cwd()
+  end,
+  init_options = {
+    ["language_server.diagnostics_on_update"] = false,
+    ["language_server.diagnostics_on_open"] = false,
+    ["language_server.diagnostics_on_save"] = false,
+    ["language_server_phpstan.enabled"] = false,
+    ["language_server_psalm.enabled"] = false,
+  },
 })
 vim.lsp.enable("phpactor")
